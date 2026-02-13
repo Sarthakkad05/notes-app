@@ -7,8 +7,9 @@ It stores notes as local Markdown files and supports modular AI-powered semantic
 
 - Local workspace (`.md` files as source of truth)
 - Markdown editor (TipTap)
-- Keyword search (Phase 1)
-- Hybrid semantic search (Phase 2)
+- Keyword search (
+- Hybrid semantic search
+- Ollma model for AI
 - Fully offline by default
 - Optional OpenAI provider (user API key)
 
