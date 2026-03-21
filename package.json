@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "dist/main/main.js",
   "scripts": {
-  "build": "tsc",
+  "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && esbuild src/main/main.ts --platform=node --format=cjs --outdir=dist/main --sourcemap && esbuild src/preload/preload.ts --platform=node --format=cjs --outdir=dist/preload --sourcemap && NODE_ENV=development electron-forge start\"",
+  "build": "vite build && esbuild src/main/main.ts --platform=node --format=cjs --outdir=dist/main --sourcemap && esbuild src/preload/preload.ts --platform=node --format=cjs --outdir=dist/preload --sourcemap",
   "start": "npm run build && electron-forge start",
-  "package": "npm run build && electron-forge package",
   "make": "npm run build && electron-forge make"
 },
   "devDependencies": {
@@ -18,11 +18,20 @@
     "@electron-forge/plugin-fuses": "^7.11.1",
     "@electron/fuses": "^1.8.0",
     "@types/node": "^25.5.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "concurrently": "^9.2.1",
     "electron": "^41.0.3",
+    "esbuild": "^0.27.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "vite": "^8.0.1",
+    "wait-on": "^9.0.4"
   },
   "dependencies": {
-    "electron-squirrel-startup": "^1.0.1"
+    "electron-squirrel-startup": "^1.0.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   }
 }
