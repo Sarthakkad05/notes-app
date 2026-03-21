@@ -1,0 +1,28 @@
+# dependencies
+node_modules/
+
+# TypeScript compiled output
+dist/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# electron
+out/
+.webpack/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# env
+.env
+.env.local
+
+# editor
+.vscode/
+.idea/
+*.suo
+*.swp
